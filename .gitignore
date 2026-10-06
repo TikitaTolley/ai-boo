@@ -1,0 +1,16 @@
+# Local credentials
+**/secrets.h
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local diagnostics and generated files
+diagnostics.md
+.DS_Store
+__pycache__/
+build/
+.pio/
+*.bin
+*.elf
