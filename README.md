@@ -30,6 +30,7 @@ An ESP32-CAM looks out through the pumpkin's mouth and runs Google's person dete
 | 2 | JST PH2.0 2-pin wire pairs | £0.26 |
 | 4 | Screw terminals, 2-pin | £0.68 |
 | 1 | 1 kohm resistor | - |
+| 1 | 470 µF capacitor | - |
 | 153 g | PETG filament, orange and green | £5.36 |
 
 **Total: about £22**
@@ -45,7 +46,9 @@ An ESP32-CAM looks out through the pumpkin's mouth and runs Google's person dete
 | ESP32-CAM | 5V / GND | 5 V / GND |
 | USB-C breakout | VBUS / GND | 5 V / GND |
 
-The board layout for both boards is in [`layout/pumpkin-boo.diy`](layout/pumpkin-boo.diy), which opens in [DIYLC](https://bancika.github.io/diy-layout-creator/).
+<img src="media/board-layout.webp" width="500" alt="Board layout: the DFPlayer and USB-C breakout on the main board, and the ESP32-CAM with its capacitor on the camera board">
+
+The layout file is [`layout/pumpkin-boo.diy`](layout/pumpkin-boo.diy), which opens in [DIYLC](https://bancika.github.io/diy-layout-creator/).
 
 ## Enclosure
 
