@@ -45,6 +45,8 @@ An ESP32-CAM looks out through the pumpkin's mouth and runs Google's person dete
 | ESP32-CAM | 5V / GND | 5 V / GND |
 | USB-C breakout | VBUS / GND | 5 V / GND |
 
+The board layout for both boards is in [`layout/pumpkin-boo.diy`](layout/pumpkin-boo.diy), which opens in [DIYLC](https://bancika.github.io/diy-layout-creator/).
+
 ## Enclosure
 
 Modelled in Onshape by following [LearnItDoItMakeIt's pumpkin video][credit-cad], then reshaped to fit the electronics. It prints in PETG as a bowl and a lid, at 0.28 mm layers: about 3 h 45 min for the bowl and 1 h 30 min for the lid, with a filament change to green for the stem.
