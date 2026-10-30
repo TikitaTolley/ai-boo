@@ -14,3 +14,7 @@ build/
 .pio/
 *.bin
 *.elf
+
+# Frames saved by tools/capture.sh stay local; only the folder guide is shared
+frames/*
+!frames/README.md

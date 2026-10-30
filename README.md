@@ -1,14 +1,123 @@
-# Halloween Builds
+# Pumpkin Boo
 
-Spooky electronics builds for Halloween, starting in 2026.
+> A 3D-printed Halloween pumpkin that spots people with its camera and boos at them.
 
-## The builds
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat&logo=youtube&logoColor=white)][yt]
+[![TikTok](https://img.shields.io/badge/TikTok-000000?style=flat&logo=tiktok&logoColor=white)][tt]
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white)][ig]
 
-- [The Haunted Sweet Bowl](haunted-sweet-bowl/) - a sweet bowl that reacts with spooky voices when someone takes sweets.
-- [Boo Pumpkin](boo-pumpkin/) - a camera-triggered pumpkin that shouts boo through a speaker. Includes Arduino firmware and three boo audio tracks.
+<p>
+  <img src="media/finished-pumpkin.webp" height="300" alt="Finished Pumpkin Boo with its green stem lid, held up in one hand">
+  <img src="media/printed-pumpkin.webp" height="300" alt="Printed orange pumpkin with carved eyes and an open mouth">
+  <img src="media/electronics-layout.webp" height="300" alt="ESP32-CAM board, DFPlayer Mini board, speaker and USB-C power board laid out on a cutting mat">
+</p>
 
-## Watch the builds
+## What it does
 
-[Choosing a Boo for My Halloween Build](https://www.youtube.com/watch?v=T6uCIbbO7LQ)
+An ESP32-CAM looks out through the pumpkin's mouth and runs Google's person detection model on the board itself. When someone walks past, a DFPlayer Mini plays a boo through a small speaker.
 
-More build videos on [TikitaTech on YouTube](https://www.youtube.com/@tikitatech).
+## Parts
+
+| Qty | Part | Price |
+| --- | --- | --- |
+| 1 | ESP32-CAM with ESP32-CAM-MB programmer | £7.90 |
+| 1 | DFPlayer Mini | £0.90 |
+| 1 | microSD card, 16 GB | £3.04 |
+| 1 | Speaker, 40 mm 4 ohm 3 W | £0.66 |
+| 1 | USB-C female breakout | £0.22 |
+| 1 | Half-size solderable breadboard PCB | £2.63 |
+| 1 | Perfboard, 60 x 40 mm | £0.43 |
+| 2 | JST PH2.0 2-pin wire pairs | £0.26 |
+| 4 | Screw terminals, 2-pin | £0.68 |
+| 1 | 1 kohm resistor | - |
+| 153 g | PETG filament, orange and green | £5.36 |
+
+**Total: about £22**
+
+## Wiring
+
+| Part | Pin | Connects to |
+| --- | --- | --- |
+| DFPlayer Mini | RX | ESP32 GPIO14 through the 1 kohm resistor |
+| | TX | ESP32 GPIO13 |
+| | VCC / GND | 5 V / GND |
+| | SPK1 / SPK2 | Speaker |
+| ESP32-CAM | 5V / GND | 5 V / GND |
+| USB-C breakout | VBUS / GND | 5 V / GND |
+
+## Enclosure
+
+Modelled in Onshape by following [LearnItDoItMakeIt's pumpkin video][credit-cad], then reshaped to fit the electronics. It prints in PETG as a bowl and a lid, at 0.28 mm layers: about 3 h 45 min for the bowl and 1 h 30 min for the lid, with a filament change to green for the stem.
+
+## Firmware
+
+- Copy `main/secrets.example.h` to `main/secrets.h` and add your Wi-Fi and passwords.
+- First upload: put the ESP32-CAM on the ESP32-CAM-MB, choose **AI Thinker ESP32-CAM** and **Tools > Partition Scheme > Minimal SPIFFS (1.9MB APP with OTA)**, then upload `main/main.ino`.
+- After that, upload over Wi-Fi: pick `boo-pumpkin` under **Tools > Port**.
+- The boo sounds are in `mp3/`. Copy the folder to the DFPlayer's microSD card and set `BOO_VOICE` in `main.ino`.
+
+## Status page
+
+Open `http://boo-pumpkin.local/` (or the IP address printed in Serial Monitor at 115200 baud) on the same network, and log in as `boo` with your `PAGE_PASSWORD`.
+
+| Page | What it does |
+| --- | --- |
+| `/` | Live view: what the model sees, the camera frame, person score, sound settings and recent events, plus buttons |
+| `/capture` | The full camera frame as a JPEG |
+| `/input` | The 96x96 picture the model scores |
+| `/boo` | Plays the boo, even in quiet mode |
+| `/volume?level=0-30` | Sets the volume |
+| `/quiet?on=1` or `0` | Quiet mode: detections are counted and logged but make no sound |
+| `/state` | One line of `key=value` pairs for scripts |
+
+## Phone and laptop tool
+
+`tools/capture.sh` controls the pumpkin from a terminal, including Termux on Android, and saves camera frames into [`frames/`](frames/) for training a better model.
+
+```sh
+capture find                     # find the pumpkin on this network and remember it
+capture watch                    # live person score; prints BOO! (and vibrates in Termux) when it triggers
+capture quiet on                 # silent detections
+capture vol 20                   # volume 0-30
+capture list                     # saved frame types and counts
+capture hallway-empty            # save frames into training/hallway-empty/ until Ctrl+C
+```
+
+**Termux setup (Android):**
+
+1. `pkg install curl net-tools` and `termux-setup-storage`, then allow Termux to access files when Android asks.
+2. Copy `capture.sh` to the phone, then `cp ~/storage/downloads/capture.sh ~/ && chmod +x ~/capture.sh`.
+3. `echo "alias capture=~/capture.sh" >> ~/.bashrc && source ~/.bashrc`
+4. `capture find`, then open the IP address it prints in the phone browser.
+
+## Troubleshooting
+
+- **It says it booed but makes no sound:** press the DFPlayer firmly into its socket.
+- **The status page will not load on a Mac:** allow the browser under System Settings > Privacy & Security > Local Network, then reopen it.
+
+## Videos
+
+[Breadboarding a New Project][yt-bb1] · [Breadboarding, part 2][yt-bb2] · [Choosing a Boo][yt-choose] · [Started Soldering][yt-solder] · [Did I Break It?][yt-break] · [From CAD to 3D Print][yt-cad]
+
+## Credits
+
+- Camera setup adapted from Espressif's Arduino-ESP32 CameraWebServer example.
+- Person detection model from Espressif's [esp-tflite-micro](https://github.com/espressif/esp-tflite-micro) person_detection example (Google's Visual Wake Words model, Apache 2.0).
+- DFPlayer Mini commands from the [DFRobot wiki](https://wiki.dfrobot.com/dfr0299/docs/20905).
+
+---
+
+More builds at [tikitatech.xyz][home] and [github.com/TikitaTolley][gh].
+
+[yt]: https://youtube.com/@tikitatech
+[tt]: https://tiktok.com/@tikitatech
+[ig]: https://instagram.com/tikitatech
+[gh]: https://github.com/TikitaTolley
+[home]: https://tikitatech.xyz/projects/pumpkin-boo/
+[credit-cad]: https://www.youtube.com/watch?v=MbpLjdOgZOs
+[yt-bb1]: https://www.youtube.com/shorts/Zl6EBA-aoQ0
+[yt-bb2]: https://www.youtube.com/shorts/Q0HXqWZ6UlA
+[yt-choose]: https://www.youtube.com/shorts/T6uCIbbO7LQ
+[yt-solder]: https://www.youtube.com/shorts/45dSyOHXZe0
+[yt-break]: https://www.youtube.com/shorts/bwM6lrhp54I
+[yt-cad]: https://www.youtube.com/shorts/Xbd35AHwwlg
