@@ -102,7 +102,7 @@ capture hallway-empty            # save frames into training/hallway-empty/ unti
 
 ## Videos
 
-[Breadboarding a New Project][yt-bb1] · [Breadboarding, part 2][yt-bb2] · [Choosing a Boo][yt-choose] · [Started Soldering][yt-solder] · [Did I Break It?][yt-break] · [From CAD to 3D Print][yt-cad]
+[Breadboarding a New Project][yt-bb1] · [Breadboarding, part 2][yt-bb2] · [Choosing a Boo][yt-choose] · [Started Soldering][yt-solder] · [Did I Break It?][yt-break] · [From CAD to 3D Print][yt-cad] · [From Circuit to Pumpkin That Boos][yt-circuit] · [Testing My Pumpkin That Boos at People][yt-boo-test]
 
 ## Credits
 
@@ -126,3 +126,5 @@ More builds at [tikitatech.xyz][home] and [github.com/TikitaTolley][gh].
 [yt-solder]: https://www.youtube.com/shorts/45dSyOHXZe0
 [yt-break]: https://www.youtube.com/shorts/bwM6lrhp54I
 [yt-cad]: https://www.youtube.com/shorts/Xbd35AHwwlg
+[yt-circuit]: https://www.youtube.com/shorts/ng9NW8tyyDo
+[yt-boo-test]: https://www.youtube.com/shorts/jAhoqZ6IliM
