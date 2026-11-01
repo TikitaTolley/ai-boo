@@ -27,8 +27,9 @@ An ESP32-CAM looks out through the pumpkin's mouth and runs Google's person dete
 | 1 | USB-C female breakout | £0.22 |
 | 1 | Half-size solderable breadboard PCB | £2.63 |
 | 1 | Perfboard, 60 x 40 mm | £0.43 |
-| 2 | JST PH2.0 2-pin wire pairs | £0.26 |
-| 4 | Screw terminals, 2-pin | £0.68 |
+| 3 | JST PH2.0 2-pin wire pairs | - |
+| 2 | Jumper wires, USB-C breakout to the main board | - |
+| 5 | Screw terminals, 2-pin | - |
 | 1 | 1 kohm resistor | - |
 | 1 | 470 µF capacitor | - |
 | 153 g | PETG filament, orange and green | £5.36 |
