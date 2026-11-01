@@ -62,7 +62,7 @@ Modelled in Onshape by following [LearnItDoItMakeIt's pumpkin video][credit-cad]
 
 [`print/pumpkin-boo.3mf`](print/pumpkin-boo.3mf) is a ready-to-print Bambu Studio project with the bowl on plate 1 and the lid on plate 2, supports painted and the green colour change set.
 
-Also on [Printables][printables] and [MakerWorld][makerworld]. The [Onshape document][onshape] includes the "Pumpkin Boo internals" custom feature that builds the internal supports, which were planned with AI assistance.
+Also on [Printables][printables] and [MakerWorld][makerworld], with a full step-by-step guide on [Instructables][instructables]. The [Onshape document][onshape] includes the "Pumpkin Boo internals" custom feature that builds the internal supports, which were planned with AI assistance.
 
 ### Print settings
 
@@ -148,6 +148,7 @@ More builds at [tikitatech.xyz][home] and [github.com/TikitaTolley][gh].
 [home]: https://tikitatech.xyz/projects/pumpkin-boo/
 [credit-cad]: https://www.youtube.com/watch?v=MbpLjdOgZOs
 [printables]: https://www.printables.com/model/1898820-pumpkin-boo-esp32-cam-halloween-pumpkin-enclosure
+[instructables]: https://www.instructables.com/Pumpkin-Boo-a-3D-Printed-Pumpkin-That-Spots-People/
 [makerworld]: https://makerworld.com/en/models/3531398-pumpkin-boo-esp32-cam-halloween-pumpkin
 [onshape]: https://cad.onshape.com/documents/a4e2a347568127c595291c9a/w/c4cf91c5ca630d17865e8b6c
 [yt-bb1]: https://www.youtube.com/shorts/Zl6EBA-aoQ0
