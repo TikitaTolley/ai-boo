@@ -1,6 +1,6 @@
 # Pumpkin Boo
 
-> A 3D-printed Halloween pumpkin that spots people with its camera and boos at them.
+> A 3D-printed Halloween pumpkin that spots people with its camera and shouts BOO! at them.
 
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=flat&logo=youtube&logoColor=white)][yt]
 [![TikTok](https://img.shields.io/badge/TikTok-000000?style=flat&logo=tiktok&logoColor=white)][tt]
@@ -14,7 +14,7 @@
 
 ## What it does
 
-An ESP32-CAM looks out through the pumpkin's mouth and runs Google's person detection model on the board itself. When someone walks past, a DFPlayer Mini plays a boo through a small speaker.
+An ESP32-CAM looks out through the pumpkin's mouth and runs Google's person detection model on the board itself. When someone walks past, a DFPlayer Mini plays a BOO! through a small speaker.
 
 ## Parts
 
@@ -58,6 +58,10 @@ Modelled in Onshape by following [LearnItDoItMakeIt's pumpkin video][credit-cad]
 | --- | --- | --- | --- |
 | Bowl (holds the electronics) | [`print/pumpkin-bowl.stl`](print/pumpkin-bowl.stl) | 115 g | About 3 h 45 min |
 | Lid | [`print/pumpkin-lid.stl`](print/pumpkin-lid.stl) | 38 g | About 1 h 30 min |
+
+[`print/pumpkin-boo.3mf`](print/pumpkin-boo.3mf) is a ready-to-print Bambu Studio project with the bowl on plate 1 and the lid on plate 2, supports painted and the green colour change set.
+
+Also on [Printables][printables] and [MakerWorld][makerworld]. The [Onshape document][onshape] includes the "Pumpkin Boo internals" custom feature that builds the internal supports, which were planned with AI assistance.
 
 ### Print settings
 
@@ -136,6 +140,9 @@ More builds at [tikitatech.xyz][home] and [github.com/TikitaTolley][gh].
 [gh]: https://github.com/TikitaTolley
 [home]: https://tikitatech.xyz/projects/pumpkin-boo/
 [credit-cad]: https://www.youtube.com/watch?v=MbpLjdOgZOs
+[printables]: https://www.printables.com/model/1898820
+[makerworld]: https://makerworld.com/en/models/3531398-pumpkin-boo-esp32-cam-halloween-pumpkin
+[onshape]: https://cad.onshape.com/documents/a4e2a347568127c595291c9a/w/c4cf91c5ca630d17865e8b6c
 [yt-bb1]: https://www.youtube.com/shorts/Zl6EBA-aoQ0
 [yt-bb2]: https://www.youtube.com/shorts/Q0HXqWZ6UlA
 [yt-choose]: https://www.youtube.com/shorts/T6uCIbbO7LQ
