@@ -52,7 +52,23 @@ The layout file is [`layout/pumpkin-boo.diy`](layout/pumpkin-boo.diy), which ope
 
 ## Enclosure
 
-Modelled in Onshape by following [LearnItDoItMakeIt's pumpkin video][credit-cad], then reshaped to fit the electronics. It prints in PETG as a bowl and a lid, at 0.28 mm layers: about 3 h 45 min for the bowl and 1 h 30 min for the lid, with a filament change to green for the stem.
+Modelled in Onshape by following [LearnItDoItMakeIt's pumpkin video][credit-cad], then reshaped to fit the electronics. It prints in PETG as a bowl and a lid, with a filament change to green for the stem.
+
+| Part | File | Weight | Print time |
+| --- | --- | --- | --- |
+| Bowl (holds the electronics) | [`print/pumpkin-bowl.stl`](print/pumpkin-bowl.stl) | 115 g | About 3 h 45 min |
+| Lid | [`print/pumpkin-lid.stl`](print/pumpkin-lid.stl) | 38 g | About 1 h 30 min |
+
+### Print settings
+
+Printed in PETG with a 0.4 mm nozzle on a textured PEI plate. The bowl was printed on a Bambu A1 Mini and the lid on a P1S.
+
+- **Layers:** 0.28 mm, 2 walls, grid infill (10% for the bowl, 15% for the lid).
+- **Temperature:** 255 °C nozzle, 70 °C bed.
+- **Speed:** max volumetric speed raised from the generic PETG default to 15 mm³/s for the bowl. At 0.20 mm with the default speed the bowl took 5 h 44 min.
+- **Orientation:** bowl on its flat base; lid on its flat cut face with the stem pointing up.
+- **Supports:** tree supports painted only where needed: the top edge of the mouth (about 60 mm over air) and the tops of the eyes on the bowl, and under the stem's curl on the lid. Nothing inside the bowl needs support.
+- **Two-colour stem:** one filament change to green at 10.84 mm (layer 39) on the lid. Print the bowl and the lid on separate plates, or the printer swaps colour on every shared layer.
 
 ## Firmware
 
