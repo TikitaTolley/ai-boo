@@ -140,7 +140,7 @@ More builds at [tikitatech.xyz][home] and [github.com/TikitaTolley][gh].
 [gh]: https://github.com/TikitaTolley
 [home]: https://tikitatech.xyz/projects/pumpkin-boo/
 [credit-cad]: https://www.youtube.com/watch?v=MbpLjdOgZOs
-[printables]: https://www.printables.com/model/1898820
+[printables]: https://www.printables.com/model/1898820-pumpkin-boo-esp32-cam-halloween-pumpkin-enclosure
 [makerworld]: https://makerworld.com/en/models/3531398-pumpkin-boo-esp32-cam-halloween-pumpkin
 [onshape]: https://cad.onshape.com/documents/a4e2a347568127c595291c9a/w/c4cf91c5ca630d17865e8b6c
 [yt-bb1]: https://www.youtube.com/shorts/Zl6EBA-aoQ0
