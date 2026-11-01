@@ -131,6 +131,12 @@ capture hallway-empty            # save frames into training/hallway-empty/ unti
 - Person detection model from Espressif's [esp-tflite-micro](https://github.com/espressif/esp-tflite-micro) person_detection example (Google's Visual Wake Words model, Apache 2.0).
 - DFPlayer Mini commands from the [DFRobot wiki](https://wiki.dfrobot.com/dfr0299/docs/20905).
 
+## Licence
+
+The software and firmware are available under the [MIT License](LICENSE). `main/person_detect_model_data.cpp` is the TensorFlow person detection model and keeps its own Apache 2.0 licence.
+
+The enclosure design, build documentation and deliberately released project photographs are available under [CC BY-NC-SA 4.0](LICENSE-DESIGN.md).
+
 ---
 
 More builds at [tikitatech.xyz][home] and [github.com/TikitaTolley][gh].
